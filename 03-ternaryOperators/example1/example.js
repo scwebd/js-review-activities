@@ -1,11 +1,11 @@
-var isMember = confirm("Are you a member?");
+var isMember = confirm("Are you a member?"); // true or false
 
 ///////////////////////////////////////////////////////
 
 var feeAmt = "";
 
 // if isMember === true
-if (isMember) {
+if (isMember === true) {
 	feeAmt = "$200.00";
 } else {
 	feeAmt = "$1000.00";

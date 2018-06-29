@@ -1,24 +1,8 @@
-var age = 19;
-var voteable = "";
-var drinkable = "";
+var age = 21;
 
-// rewrite this conditional as a ternary operator, so that the functionality stays the same
-if (age < 18) {
-	voteable = "too young";
-} else {
-	voteable = "old enough";
-}
+// too young OR old enough
+var voteable = (age < 18) ? "too young" : "old enough";
 
-// can we vote?
-console.log(age + " is " + voteable + " to vote.");
+console.log(age + " is " + voteable + " to vote");
 
-// rewrite this one as a ternary operator, too!
-if (age < 21) {
-	drinkable = "too young";
-} else {
-	drinkable = "old enough";
-}
-
-// can we drink?
-console.log(age + " is " + drinkable + " to drink alcohol.")
-
+console.log(age + " is " + (age < 21 ? "too young" : "old enough") + " to drink")

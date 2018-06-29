@@ -2,7 +2,7 @@ var myCar = {
     type: "beater",
     color: "dirty beige",
     mileage: 176000,
-    currentVolume: 8,
+    currentVolume: 2,
     currentlyPlaying: "Ace of Base",
     cdCollection: [
         "MC Hammer", "New Kids on the Block", "Kenny G", "Obnoxious Holiday Music", "Chumbawumba", "They Might Be Giants"
@@ -47,5 +47,12 @@ var myCar = {
 
 // Make the car honk five times. Check out the logic in the 'honk'
 // method to ensure you understand how it works!
-// myCar.honk(5);
+myCar.honk(5);
+myCar.honk(20);
+myCar.changeVolume("down"); // 7
+myCar.changeVolume("down"); // 6
+myCar.changeVolume("down"); // 5
+myCar.changeVolume("kittens"); // 5
+myCar.rePaintCar("purple");
+myCar.rePaintCar("striped");
 
