@@ -5,8 +5,16 @@ var myCar = {
     currentVolume: 2,
     currentlyPlaying: "Ace of Base",
     cdCollection: [
-        "MC Hammer", "New Kids on the Block", "Kenny G", "Obnoxious Holiday Music", "Chumbawumba", "They Might Be Giants"
+        "MC Hammer", "New Kids on the Block", "Ace of Base", "Kenny G", "Obnoxious Holiday Music", "Chumbawumba", "They Might Be Giants"
     ],
+    features: {
+        heatedSeats: false,
+        automaticWindows: false,
+        shagCarpeting: true,
+        lightlyHaunted: true,
+        numDoors: 4,
+        numUSBPorts: 0
+    },
     honk: function(numTimes) {
         var sound = "Honk! ";
         console.log(sound.repeat(numTimes));
@@ -28,14 +36,25 @@ var myCar = {
     // But only allow the user to change the volume no lower than 0 and
     // no higher than 10.
     changeVolume: function(direction) {
-        if (direction == "up" && this.currentVolume < 10) {
-            this.currentVolume++;
-            console.log("Current volume: " + this.currentVolume, this);
-        } else if (direction == "down" && this.currentVolume > 0) {
-            this.currentVolume--;
-            console.log("Current volume: " + this.currentVolume, this);
-        } else {
-            console.log("Sorry, the volume range is between 0 and 10 only!");
+        switch(direction) {
+            case "up":
+                if (this.currentVolume < 10) {
+                    this.currentVolume++;
+                    console.log("Current volume: " + this.currentVolume, this);
+                } else {
+                    console.log("Sorry, the volume can't go any higher!");
+                }
+                break;
+            case "down":
+                if (this.currentVolume > 0) {
+                    this.currentVolume--;
+                    console.log("Current volume: " + this.currentVolume, this);
+                } else {
+                    console.log("Sorry, the volume can't go any lower!");
+                }
+            default:
+                console.log("Invalid command. Try again!");
+                return console.log("Current volume: " + this.currentVolume, this);
         }
     },
     // Write a method to change 'color' to whatever color the user provides. 
@@ -49,10 +68,14 @@ var myCar = {
 // method to ensure you understand how it works!
 myCar.honk(5);
 myCar.honk(20);
-myCar.changeVolume("down"); // 7
-myCar.changeVolume("down"); // 6
-myCar.changeVolume("down"); // 5
-myCar.changeVolume("kittens"); // 5
+myCar.changeTunes();
+myCar.addTunes("Crash Test Dummies");
+myCar.changeVolume("down");
+myCar.changeVolume("down");
+myCar.changeVolume("down");
+myCar.changeTunes();
+myCar.changeVolume("up");
+myCar.changeVolume("bucket");
 myCar.rePaintCar("purple");
 myCar.rePaintCar("striped");
 

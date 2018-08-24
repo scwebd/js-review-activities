@@ -1,31 +1,30 @@
 var myCar = {
     type: "beater",
     color: "dirty beige",
-    mileage: 176000,
+    mileage: 196000,
     currentVolume: 8,
     currentlyPlaying: "Ace of Base",
     cdCollection: [
-        "MC Hammer", "New Kids on the Block", "Kenny G", "Obnoxious Holiday Music", "Chumbawumba", "They Might Be Giants"
+        "MC Hammer", "New Kids on the Block", "Ace of Base", "Kenny G", "Obnoxious Holiday Music", "Chumbawumba", "They Might Be Giants"
     ],
+    features: {
+        heatedSeats: false,
+        automaticWindows: false,
+        shagCarpeting: true,
+        lightlyHaunted: true,
+        numDoors: 4,
+        numUSBPorts: 0
+    },
     honk: function(numTimes) {
         var sound = "Honk! ";
         console.log(sound.repeat(numTimes));
-    },
+    }
 
     // Write a method to change CDs -- this should randomly choose
     // a CD from 'cdCollection' and set it to 'currentlyPlaying'.
     // Then test it out a few times to make sure it works!
-    randomTune: function() {
-        var randomAlbum = this.cdCollection[Math.floor(Math.random() * this.cdCollection.length)];
-        this.currentlyPlaying = randomAlbum
-        console.log("Random album selected: " + randomAlbum, this);
-    },
 
     // Write a method to add a new CD to 'cdCollection'.
-    addTunes: function(cdName) {
-        this.cdCollection.push(cdName);
-        console.log("Added CD " + cdName, this);
-    }
 
     // Write a method to change 'currentVolume' either up or down...
     // But only allow the user to change the volume no lower than 0 and
@@ -39,8 +38,4 @@ var myCar = {
 // method to ensure you understand how it works!
 
 
-myCar.addTunes("Hootie and the Blowfish");
-myCar.addTunes("Nickelback");
-myCar.randomTune();
-myCar.randomTune();
 
