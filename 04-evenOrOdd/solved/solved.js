@@ -4,5 +4,5 @@ function evenOrOdd(number) {
 
 // Should log "The number 2 is even."
 console.log(evenOrOdd(2));
-// Should log "The number 17 is ODD.""
+// Should log "The number 17 is odd.""
 console.log(evenOrOdd(17));
